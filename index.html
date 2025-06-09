@@ -78,6 +78,8 @@
     <h1>Feliz Dia dos Namorados, Patinha 🦆💕</h1>
     <div class="subtitle">Desde 01/11/2022, nosso amor só cresce! Te amo 💗</div>
 
+
+    <!-- botão-->
     <button id="playButton" style="
       background: linear-gradient(135deg, #ff4e50, #ff8e53);
       color: white;
@@ -97,6 +99,7 @@
   <source src="Vanguart - Meu Sol.mp3" type="audio/mpeg" />
   Seu navegador não suporta áudio HTML5.
 </audio>
+    <!-- Acabaqui-->
 
     <div class="gallery">
            
@@ -173,5 +176,18 @@
     <p>Feito com muito amor pelo seu Patinho 💌</p>
     <p>PS: Sei que não é muito, mas fiz de coração</p>
   </footer>
+    
+<!-- script musica-->
+    
+<script>
+  const playButton = document.getElementById('playButton');
+  const music = document.getElementById('bgMusic');
+
+  playButton.addEventListener('click', () => {
+    music.play();
+    playButton.style.display = 'none'; // Esconde o botão depois de clicar
+  });
+</script>
+    <!-- acaba aqui-->
 </body>
 </html>
