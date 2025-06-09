@@ -60,6 +60,35 @@
 }
 
     /* e acaba aqui*/
+
+    /* corções*/
+
+.heart {
+      position: fixed;
+      bottom: 0;
+      font-size: 24px;
+      color: #ff4e50;
+      animation: floatUp 3s ease forwards;
+      pointer-events: none;
+      user-select: none;
+      z-index: 9999;
+      opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-200px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+    /*fechacoração*/
+
+    
     iframe {
       margin-top: 2rem;
       border: none;
@@ -95,10 +124,13 @@
       💕 Tocar Música
     </button>
 
-<audio id="bgMusic" loop>
+<audio id="bgMusic">
   <source src="Vanguart - Meu Sol.mp3" type="audio/mpeg" />
   Seu navegador não suporta áudio HTML5.
 </audio>
+
+
+    
     <!-- Acabaqui-->
 
     <div class="gallery">
@@ -189,5 +221,33 @@
   });
 </script>
     <!-- acaba aqui-->
+
+<!--script fim musica começa corações -->
+    <script>
+  music.addEventListener('ended', () => {
+  playButton.style.display = 'inline-block'; // mostra o botão de novo
+
+  // Cria 15 corações flutuantes
+  for (let i = 0; i < 15; i++) {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.textContent = '💕';
+
+    // Posição horizontal aleatória na tela (10px a 90vw)
+    heart.style.left = (Math.random() * 80 + 10) + 'vw';
+
+    // Pequena variação no tempo para animação mais natural
+    heart.style.animationDuration = (2 + Math.random() * 2) + 's';
+
+    document.body.appendChild(heart);
+
+    // Remove o coração após a animação acabar para limpar o DOM
+    heart.addEventListener('animationend', () => {
+      heart.remove();
+    });
+  }
+});
+    </script>
+<!--acaba aqui -->    
 </body>
 </html>
