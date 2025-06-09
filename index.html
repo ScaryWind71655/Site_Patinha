@@ -81,7 +81,7 @@
     opacity: 0.8;
   }
   100% {
-    transform: translateY(-200px) scale(1.5);
+    transform: translateY(-60vh) scale(1.5);
     opacity: 0;
   }
 }
@@ -227,21 +227,21 @@
   music.addEventListener('ended', () => {
   playButton.style.display = 'inline-block'; // mostra o botão de novo
 
-  // Cria 15 corações flutuantes
-  for (let i = 0; i < 15; i++) {
+  // Criacorações flutuantes
+  for (let i = 0; i < 250; i++) {
     const heart = document.createElement('div');
     heart.classList.add('heart');
     heart.textContent = '💕';
 
-    // Posição horizontal aleatória na tela (10px a 90vw)
+    // Posição horizontal aleatória na tela
     heart.style.left = (Math.random() * 80 + 10) + 'vw';
 
-    // Pequena variação no tempo para animação mais natural
+    // Pequena variação no tempo
     heart.style.animationDuration = (2 + Math.random() * 2) + 's';
 
     document.body.appendChild(heart);
 
-    // Remove o coração após a animação acabar para limpar o DOM
+    // Removecorações
     heart.addEventListener('animationend', () => {
       heart.remove();
     });
